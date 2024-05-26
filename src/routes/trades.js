@@ -35,7 +35,7 @@ router.post('/upload', upload.single('file'), async (req, res) => {
             } catch (error) {
                 res.status(500).json({ message: 'Error storing trades in the database', error });
             } finally {
-                fs.unlinkSync(filePath); // Clean up the uploaded file
+                fs.unlinkSync(filePath);
             }
         });
 });
